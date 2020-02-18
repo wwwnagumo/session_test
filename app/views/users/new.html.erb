@@ -1,0 +1,23 @@
+新規登録画面
+
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'ユーザー名' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, 'メールアドレス' %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'パスワード（確認）' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+  <%= f.submit '作成', class: 'btn btn-primary' %>
+
+  <%= link_to 'ログアウト', user_log_out_path, method: :delete%>
+<% end %>
